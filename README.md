@@ -4,7 +4,7 @@
 
 **Official Distribution Hub and In-App Update Mirror for Cencera Comate Browser**
 
-[![Version](https://img.shields.io/badge/Release-0.0.98_Beta-00ddff?style=for-the-badge&logo=electron&logoColor=white)](https://github.com/cencera-xyz/comate-downloader/releases)
+[![Version](https://img.shields.io/badge/Release-0.0.98_beta-00ddff?style=for-the-badge&logo=electron&logoColor=white)](https://github.com/cencera-xyz/comate-downloader/releases)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-blue?style=for-the-badge)](https://github.com/cencera-xyz/comate-downloader/releases)
 [![Domain](https://img.shields.io/badge/Official%20Site-cencera.xyz-purple?style=for-the-badge)](https://accounts.cencera.xyz)
 
@@ -23,30 +23,47 @@ The Comate desktop app communicates directly with this repository's manifest (`v
 
 ---
 
-## 📥 Latest Downloads (`v0.0.98`)
+## 📥 Verified Downloads (`v0.0.98`)
 
-| Platform | Format | Architecture | Download Link |
-| :--- | :--- | :--- | :--- |
-| **Windows** | Setup Installer (`.exe`) | x64 | [Download Installer](https://github.com/cencera-xyz/comate-downloader/releases/latest/download/Cencera%20Comate%20Setup%200.0.98.exe) |
-| **Windows** | Portable (`.exe`) | x64 | [Download Portable](https://github.com/cencera-xyz/comate-downloader/releases/latest/download/Cencera%20Comate%200.0.98.exe) |
-| **Linux** | Debian / Ubuntu (`.deb`) | x64 | [Download .deb](https://github.com/cencera-xyz/comate-downloader/releases/latest/download/comate-browser_0.0.98_amd64.deb) |
-| **Linux** | Universal AppImage (`.AppImage`) | x64 | [Download AppImage](https://github.com/cencera-xyz/comate-downloader/releases/latest/download/Cencera%20Comate-0.0.98.AppImage) |
-| **macOS** | Apple Disk Image (`.dmg`) | Universal / x64 | [Download .dmg](https://github.com/cencera-xyz/comate-downloader/releases/latest/download/Cencera%20Comate-0.0.98.dmg) |
+| Platform | Format | Architecture | Size | SHA-256 Hash | Direct Download |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Windows** | Setup Installer (`.exe`) | x64 | ~108 MB | `1f92aa1e35b7adc9...` | [Download Setup](https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate-setup_0.0.98_x64.exe) |
+| **Windows** | Portable (`.exe`) | x64 | ~108 MB | `bcccb5bf8e860c37...` | [Download Portable](https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate-portable_0.0.98_x64.exe) |
+| **Linux** | Debian / Ubuntu (`.deb`) | x64 (amd64) | ~96 MB | `6b7779fa139f0271...` | [Download .deb](https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate_0.0.98_amd64.deb) |
+| **Linux** | Universal AppImage (`.AppImage`) | x64 | ~122 MB | `b3b18cb618fe43e7...` | [Download AppImage](https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate_0.0.98_x86_64.AppImage) |
+| **macOS** | Apple Disk Image (`.dmg`) | Universal | — | Pending | [Download .dmg](https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate_0.0.98.dmg) |
+
+*Full verification hashes are published in [`checksums.txt`](./checksums.txt).*
 
 ---
 
-## 🗂️ Repository Structure
+## 🚀 Installation Runbook
 
-```text
-comate-downloader/
-├── README.md                          # Repository documentation & installation guide
-├── version.json                       # In-app version detection manifest (Source of Truth)
-├── releases/
-│   ├── latest/
-│   │   ├── Cencera-Comate-Setup.exe   # Windows NSIS installer
-│   │   ├── Cencera-Comate.exe         # Windows portable executable
-│   │   ├── comate-browser_amd64.deb   # Debian / Ubuntu package
-│   │   └── Cencera-Comate.AppImage    # Linux portable binary
-│   └── archive/                       # Historical builds (v0.0.96, etc.)
-└── scripts/
-    └── publish.sh                     # Helper script to sync release artifacts
+### Linux (Debian / Ubuntu / Mint)
+```bash
+# Install .deb package
+sudo dpkg -i cencera-comate_0.0.98_amd64.deb
+sudo apt-get install -f # Fix any missing dependencies if needed
+```
+
+### Linux (AppImage)
+```bash
+chmod +x cencera-comate_0.0.98_x86_64.AppImage
+./cencera-comate_0.0.98_x86_64.AppImage
+```
+
+### Windows
+- Run `cencera-comate-setup_0.0.98_x64.exe` to install Comate to Program Files with desktop and Start menu shortcuts.
+- Or run `cencera-comate-portable_0.0.98_x64.exe` without installation.
+
+---
+
+## 🔒 Verification & Safety
+All official releases are built from verified sources and hashed with SHA-256. To verify your download:
+```bash
+# Linux
+sha256sum cencera-comate_0.0.98_amd64.deb
+
+# Windows (PowerShell)
+Get-FileHash .\cencera-comate-setup_0.0.98_x64.exe -Algorithm SHA256
+```
