@@ -1,8 +1,8 @@
 {
-  "version": "0.0.97",
+  "version": "0.0.98",
   "channel": "beta",
   "releaseDate": "2026-09-21",
-  "minRequiredVersion": "0.0.90",
+  "minRequiredVersion": "0.0.97",
   "releaseNotes": [
     "Integrated Paddle Sandbox Billing & Webhook Provisioning",
     "Enhanced autonomous TATF self-healing loop",

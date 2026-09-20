@@ -1,0 +1,5 @@
+# Release artifacts are uploaded to GitHub Releases instead of being versioned in git.
+release info/releases/**/*.exe
+release info/releases/**/*.deb
+release info/releases/**/*.AppImage
+release info/releases/**/*.dmg
