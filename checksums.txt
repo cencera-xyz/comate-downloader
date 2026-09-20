@@ -1,5 +1,5 @@
 # SHA-256 Checksums for Cencera Comate v0.0.98
-# Generated: 2026-09-20T18:31:56.506Z
+# Generated: 2026-09-20T18:32:40.865Z
 
 6b7779fa139f027140e9b27da94ea54a4178beacedac83563d39c6c4db845d57  cencera-comate_0.0.98_amd64.deb
 b3b18cb618fe43e7cb1c79696b564df41566165443642ac4f0de45d91cd06327  cencera-comate_0.0.98_x86_64.AppImage
