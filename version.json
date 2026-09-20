@@ -1,0 +1,25 @@
+{
+  "version": "0.0.97",
+  "channel": "beta",
+  "releaseDate": "2026-09-21",
+  "minRequiredVersion": "0.0.90",
+  "releaseNotes": [
+    "Integrated Paddle Sandbox Billing & Webhook Provisioning",
+    "Enhanced autonomous TATF self-healing loop",
+    "App identifier set to com.cencera.comate",
+    "Added in-app version detection and direct downloader"
+  ],
+  "downloads": {
+    "linux": {
+      "deb": "https://github.com/cencera-xyz/comate-downloader/releases/latest/download/comate-browser_amd64.deb",
+      "appImage": "https://github.com/cencera-xyz/comate-downloader/releases/latest/download/Comate.AppImage"
+    },
+    "win32": {
+      "exe": "https://github.com/cencera-xyz/comate-downloader/releases/latest/download/Comate-Setup.exe",
+      "portable": "https://github.com/cencera-xyz/comate-downloader/releases/latest/download/Comate-Portable.exe"
+    },
+    "darwin": {
+      "dmg": "https://github.com/cencera-xyz/comate-downloader/releases/latest/download/Comate.dmg"
+    }
+  }
+}
