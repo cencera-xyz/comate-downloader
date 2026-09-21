@@ -8,7 +8,7 @@ The aesthetic should feel sleek, futuristic, dark-mode-first, and ultra-premium 
 - Right: "Download" button (with OS auto-detection pill: e.g., "Download for Linux .deb" or "Windows .exe") and GitHub repo link with star badge.
 
 ### 2. Hero Section
-- Tagline Badge: "✨ Comate v0.0.98 Beta is Live" (clickable to changelog).
+- Tagline Badge: "✨ Comate v0.0.99 Beta is Live" (clickable to changelog).
 - Main Headline: "Tell it what you want. It figures out how to do it."
 - Subheadline: "The autonomous desktop browser that navigates, researches, and executes multi-step workflows on your behalf — with complete privacy and zero technical overhead."
 - Call-to-Actions (CTAs):
@@ -45,7 +45,7 @@ The aesthetic should feel sleek, futuristic, dark-mode-first, and ultra-premium 
 
 ### 7. Download Matrix & System Requirements
 - Platform tabs for Windows (x64 Setup & Portable), Linux (Debian/Ubuntu .deb & universal .AppImage), and macOS (.dmg).
-- Displays version (v0.0.98), file size, release date, and direct SHA256 checksums.
+- Displays version (v0.0.99), file size, release date, and direct SHA256 checksums.
 
 ### 8. Footer
 - Links to GitHub repo, Release notes, Discord/Community, Privacy Policy, Terms, and Docs.

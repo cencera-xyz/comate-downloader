@@ -1,5 +1,5 @@
 {
-  "version": "0.0.98",
+  "version": "0.0.99",
   "channel": "beta",
   "releaseDate": "2026-09-20",
   "minRequiredVersion": "0.0.97",
@@ -14,49 +14,49 @@
   ],
   "downloads": {
     "linux": {
-      "deb": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate_0.0.98_amd64.deb",
-      "appImage": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate_0.0.98_x86_64.AppImage"
+      "deb": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_amd64.deb",
+      "appImage": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_x86_64.AppImage"
     },
     "win32": {
-      "exe": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate-setup_0.0.98_x64.exe",
-      "portable": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate-portable_0.0.98_x64.exe"
+      "exe": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-setup_0.0.99_x64.exe",
+      "portable": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-portable_0.0.99_x64.exe"
     },
     "darwin": {
-      "dmg": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate_0.0.98.dmg"
+      "dmg": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99.dmg"
     }
   },
   "artifacts": [
     {
-      "name": "cencera-comate_0.0.98_amd64.deb",
+      "name": "cencera-comate_0.0.99_amd64.deb",
       "platform": "linux",
       "sizeBytes": 100386296,
       "formattedSize": "95.7 MB",
       "sha256": "6b7779fa139f027140e9b27da94ea54a4178beacedac83563d39c6c4db845d57",
-      "downloadUrl": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate_0.0.98_amd64.deb"
+      "downloadUrl": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_amd64.deb"
     },
     {
-      "name": "cencera-comate_0.0.98_x86_64.AppImage",
+      "name": "cencera-comate_0.0.99_x86_64.AppImage",
       "platform": "linux",
       "sizeBytes": 127298449,
       "formattedSize": "121.4 MB",
       "sha256": "b3b18cb618fe43e7cb1c79696b564df41566165443642ac4f0de45d91cd06327",
-      "downloadUrl": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate_0.0.98_x86_64.AppImage"
+      "downloadUrl": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_x86_64.AppImage"
     },
     {
-      "name": "cencera-comate-setup_0.0.98_x64.exe",
+      "name": "cencera-comate-setup_0.0.99_x64.exe",
       "platform": "win32",
       "sizeBytes": 112976701,
       "formattedSize": "107.7 MB",
       "sha256": "1f92aa1e35b7adc965aeee16dbb8c84b5996a596e2701189455588bab9333240",
-      "downloadUrl": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate-setup_0.0.98_x64.exe"
+      "downloadUrl": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-setup_0.0.99_x64.exe"
     },
     {
-      "name": "cencera-comate-portable_0.0.98_x64.exe",
+      "name": "cencera-comate-portable_0.0.99_x64.exe",
       "platform": "win32",
       "sizeBytes": 112719909,
       "formattedSize": "107.5 MB",
       "sha256": "bcccb5bf8e860c378a4ad07ae0fe8104aa848d59ae434b54727095fec238dd4b",
-      "downloadUrl": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.98/cencera-comate-portable_0.0.98_x64.exe"
+      "downloadUrl": "https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-portable_0.0.99_x64.exe"
     }
   ]
 }

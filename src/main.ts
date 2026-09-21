@@ -19,8 +19,8 @@ import { renderFooter, initFooter } from './components/Footer';
 import { renderModals, initModals } from './components/Modals';
 import { BrandIcons, LucideIcons } from './components/Icons';
 
-const WIN_PORTABLE_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/V0.0.98/cencera-comate-portable_0.0.98_x64.exe';
-const LINUX_DEB_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/V0.0.98/cencera-comate_0.0.98_amd64.deb';
+const WIN_PORTABLE_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/V0.0.99/cencera-comate-portable_0.0.99_x64.exe';
+const LINUX_DEB_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/V0.0.99/cencera-comate_0.0.99_amd64.deb';
 
 function detectClientDevice(): DeviceInfo {
   const nav = window.navigator as any;
@@ -95,7 +95,7 @@ function detectClientDevice(): DeviceInfo {
       recommendedSize: '107 MB',
       downloadUrl: WIN_PORTABLE_URL,
       downloadLabel: 'Download for Windows',
-      downloadSub: 'v0.0.98 Portable (.exe) • 107 MB • Windows 10/11',
+      downloadSub: 'v0.0.99 Portable (.exe) • 107 MB • Windows 10/11',
       detectedNotice: 'Detected Windows x64 • Free Beta'
     };
   }
@@ -129,7 +129,7 @@ function detectClientDevice(): DeviceInfo {
     recommendedSize: '95.7 MB',
     downloadUrl: LINUX_DEB_URL,
     downloadLabel: 'Download for Linux (.deb)',
-    downloadSub: 'v0.0.98 (amd64) • 95.7 MB • Ubuntu / Debian',
+    downloadSub: 'v0.0.99 (amd64) • 95.7 MB • Ubuntu / Debian',
     detectedNotice: 'Detected Linux x86_64 • Free Beta'
   };
 }
@@ -151,7 +151,7 @@ function applyDeviceCustomization(deviceOrOS: DeviceInfo | OSPlatform): void {
         recommendedSize: '107 MB',
         downloadUrl: WIN_PORTABLE_URL,
         downloadLabel: 'Download for Windows',
-        downloadSub: 'v0.0.98 Portable (.exe) • 107 MB • Windows 10/11',
+        downloadSub: 'v0.0.99 Portable (.exe) • 107 MB • Windows 10/11',
         detectedNotice: 'Selected Windows x64 • Free Beta'
       };
     } else if (os === 'linux') {
@@ -166,7 +166,7 @@ function applyDeviceCustomization(deviceOrOS: DeviceInfo | OSPlatform): void {
         recommendedSize: '95.7 MB',
         downloadUrl: LINUX_DEB_URL,
         downloadLabel: 'Download for Linux (.deb)',
-        downloadSub: 'v0.0.98 (amd64) • 95.7 MB • Ubuntu / Debian',
+        downloadSub: 'v0.0.99 (amd64) • 95.7 MB • Ubuntu / Debian',
         detectedNotice: 'Selected Linux x86_64 • Free Beta'
       };
     } else {

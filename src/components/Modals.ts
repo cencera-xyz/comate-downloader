@@ -83,21 +83,21 @@ export function renderModals(): string {
     </div>
   </div>
 
-  <!-- MODAL: CHANGELOG / RELEASE NOTES (v0.0.98) -->
+  <!-- MODAL: CHANGELOG / RELEASE NOTES (v0.0.99) -->
   <div class="modal-backdrop" id="changelog-modal" role="dialog" aria-modal="true" aria-labelledby="cl-modal-title">
     <div class="modal-card">
       <div class="modal-header">
         <div class="modal-title-group">
           <span class="modal-glow-dot"></span>
-          <h3 class="modal-title" id="cl-modal-title">Release Notes — Comate v0.0.98 Beta</h3>
+          <h3 class="modal-title" id="cl-modal-title">Release Notes — Comate v0.0.99 Beta</h3>
         </div>
         <button class="modal-close-btn" id="changelog-modal-close" aria-label="Close dialog">&times;</button>
       </div>
       <div class="modal-body changelog-body">
         <div class="cl-meta-header">
-          <span class="cl-version-pill">v0.0.98 Beta</span>
-          <span class="cl-date">Release Tag: <code>V0.0.98</code></span>
-          <a href="https://github.com/cencera-xyz/comate-downloader/releases/tag/V0.0.98" target="_blank" rel="noopener noreferrer" class="cl-commit">View on GitHub ↗</a>
+          <span class="cl-version-pill">v0.0.99 Beta</span>
+          <span class="cl-date">Release Tag: <code>V0.0.99</code></span>
+          <a href="https://github.com/cencera-xyz/comate-downloader/releases/tag/V0.0.99" target="_blank" rel="noopener noreferrer" class="cl-commit">View on GitHub ↗</a>
         </div>
 
         <div class="cl-section">
