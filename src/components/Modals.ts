@@ -96,8 +96,8 @@ export function renderModals(): string {
       <div class="modal-body changelog-body">
         <div class="cl-meta-header">
           <span class="cl-version-pill">v0.0.99 Beta</span>
-          <span class="cl-date">Release Tag: <code>V0.0.99</code></span>
-          <a href="https://github.com/cencera-xyz/comate-downloader/releases/tag/V0.0.99" target="_blank" rel="noopener noreferrer" class="cl-commit">View on GitHub ↗</a>
+          <span class="cl-date">Release Tag: <code>v0.0.99</code></span>
+          <a href="https://github.com/cencera-xyz/comate-downloader/releases/tag/v0.0.99" target="_blank" rel="noopener noreferrer" class="cl-commit">View on GitHub ↗</a>
         </div>
 
         <div class="cl-section">

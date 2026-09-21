@@ -19,8 +19,8 @@ import { renderFooter, initFooter } from './components/Footer';
 import { renderModals, initModals } from './components/Modals';
 import { BrandIcons, LucideIcons } from './components/Icons';
 
-const WIN_PORTABLE_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/V0.0.99/cencera-comate-portable_0.0.99_x64.exe';
-const LINUX_DEB_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/V0.0.99/cencera-comate_0.0.99_amd64.deb';
+const WIN_PORTABLE_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-portable_0.0.99_x64.exe';
+const LINUX_DEB_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_amd64.deb';
 
 function detectClientDevice(): DeviceInfo {
   const nav = window.navigator as any;
