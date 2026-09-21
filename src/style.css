@@ -739,6 +739,137 @@ body.dark-theme {
   margin-left: 6px;
 }
 
+.dropdown-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 6px 0;
+}
+
+.dropdown-footer-item {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* Detected Device Micro-Badge */
+.hero-detected-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.71875rem;
+  color: var(--text-muted);
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.hero-detected-badge .det-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2);
+}
+
+/* Mobile Visitor Helper Card */
+.hero-mobile-helper {
+  width: 100%;
+  max-width: 440px;
+  margin-top: 8px;
+}
+
+.mobile-helper-card {
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.mobile-helper-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.mobile-helper-icon {
+  color: var(--accent-cyan);
+  background: #e0f2fe;
+  padding: 6px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mobile-helper-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobile-helper-title {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mobile-helper-desc {
+  font-size: 0.78125rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.mobile-helper-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mobile-copy-btn {
+  background: var(--btn-primary-bg);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 8px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.mobile-copy-btn:hover {
+  background: var(--btn-primary-hover);
+}
+
+.mobile-browse-link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  padding: 6px 10px;
+}
+
+.mobile-browse-link:hover {
+  text-decoration: underline;
+}
+
 /* Trust Row */
 .hero-trust-row {
   display: flex;
@@ -3992,9 +4123,23 @@ button.glass-download-button:disabled,
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE BREAKPOINTS (ALL DEVICES & SCREEN SIZES: 320px - 2560px)
    ========================================================================== */
+
+/* Universal Responsive Guards */
+img, svg, video {
+  max-width: 100%;
+}
+
+pre, code {
+  max-width: 100%;
+}
+
+/* 1. Large Tablets & Small Laptops (<= 1024px) */
 @media (max-width: 1024px) {
+  .section-container {
+    padding: 0 20px;
+  }
   .comate-workspace-body {
     grid-template-columns: 1fr;
   }
@@ -4024,40 +4169,400 @@ button.glass-download-button:disabled,
   }
 }
 
+/* 2. Intermediate Breakpoint (<= 900px) */
+@media (max-width: 900px) {
+  .exec-split-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .assistant-starter-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3. Tablets & Phablets (<= 768px) */
 @media (max-width: 768px) {
+  /* Navigation */
   .nav-menu {
     display: none;
   }
   .mobile-toggle {
     display: flex;
   }
-  .hero-title {
-    font-size: 2.1rem;
+  .header-container {
+    padding: 0 16px;
+    height: 60px;
   }
+
+  /* Hero */
+  .hero-section {
+    padding: 44px 0 36px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 6.5vw, 2.75rem);
+    line-height: 1.15;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    padding: 0 4px;
+  }
+  .hero-cta-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .primary-cta-dropdown-wrap {
+    width: 100%;
+    max-width: 440px;
+  }
+  .primary-cta-dropdown-wrap .clay-primary-btn {
+    flex: 1;
+    justify-content: center;
+  }
+  .hero-trust-row {
+    gap: 8px 12px;
+    margin-bottom: 32px;
+  }
+
+  /* Browser Mockup Mobile Adaptation */
+  .hero-mockup-wrapper {
+    margin: 20px auto 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .comate-desktop-window {
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+  }
+  .desktop-titlebar {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 0.65rem;
+  }
+  .browser-nav-strip {
+    height: 40px;
+    padding: 0 8px;
+    gap: 6px;
+  }
+  /* Hide forward and reload on mobile to fit bar */
+  .nav-actions-left .nav-icon-btn:nth-child(3),
+  .nav-actions-left .nav-icon-btn:nth-child(4) {
+    display: none;
+  }
+  .browser-tab-strip {
+    max-width: 46%;
+    overflow-x: auto;
+  }
+  .browser-tab {
+    padding: 0 8px;
+    font-size: 0.6875rem;
+    height: 26px;
+  }
+  .browser-tab .tab-text {
+    max-width: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .browser-omnibar-wrap {
+    height: 28px;
+    padding: 0 8px;
+    flex: 1;
+    min-width: 100px;
+  }
+  .omnibar-actions-right .omni-icon-btn {
+    display: none;
+  }
+  .browser-bookmarks-bar {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 8px;
+  }
+  .bookmarks-list {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  /* New Tab View */
+  .newtab-main-viewport {
+    padding: 24px 14px;
+  }
+  .newtab-prompt-card {
+    max-width: 100%;
+    padding: 14px;
+  }
+  .newtab-chips-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .speeddial-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* Assistant View */
+  .simulated-page {
+    overflow-x: auto;
+  }
+  .sim-leads-table {
+    min-width: 380px;
+  }
+
+  /* Bento Feature Grid */
   .bento-grid {
     grid-template-columns: 1fr;
   }
   .bento-span-2 {
     grid-column: span 1;
   }
+  .bento-card {
+    padding: 20px;
+  }
+  .visual-loop {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Workflows */
   .workflow-tabs-nav {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
-  .dl-grid-two {
-    grid-template-columns: 1fr;
+  .workflow-showcase-card {
+    padding: 20px 16px;
   }
+
+  /* Architecture */
   .architecture-flow-wrapper {
     flex-direction: column;
+    align-items: center;
+  }
+  .arch-node-card {
+    width: 100%;
+    max-width: 380px;
   }
   .arch-connector {
     width: 2px;
-    height: 16px;
+    height: 18px;
   }
+
+  /* Downloads */
+  .dl-grid-two {
+    grid-template-columns: 1fr;
+  }
+  .download-platform-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .dl-release-card {
+    padding: 20px 16px;
+  }
+  .checksum-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .cs-hash {
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  /* Footer */
   .footer-top-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
   .footer-bottom-row {
     flex-direction: column;
     text-align: center;
+    gap: 12px;
+  }
+  .f-watermark-text {
+    font-size: clamp(3.5rem, 12vw, 6rem);
+  }
+}
+
+/* 4. Large Phones & Small Tablets (<= 640px) */
+@media (max-width: 640px) {
+  .section-container {
+    padding: 0 16px;
+  }
+  .hero-title {
+    font-size: clamp(1.85rem, 7vw, 2.35rem);
+  }
+  .hero-pill-badge {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+  .primary-cta-dropdown-wrap {
+    max-width: 100%;
+    width: 100%;
+  }
+  .clay-primary-btn {
+    padding: 10px 14px;
+  }
+  .btn-label {
+    font-size: 0.875rem;
+  }
+  .btn-subtext {
+    font-size: 0.65625rem;
+  }
+  .cta-dropdown-toggle {
+    padding: 0 10px;
+  }
+  .cta-dropdown-menu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: unset;
+  }
+  .hero-mobile-helper {
+    max-width: 100%;
+  }
+  .trust-chip {
+    font-size: 0.72rem;
+    padding: 3px 9px;
+  }
+  /* On phones < 640px hide mockup tab strip for clean omnibar presentation */
+  .browser-tab-strip {
+    display: none;
+  }
+  .browser-omnibar-wrap {
+    height: 28px;
+  }
+  .omnibar-input {
+    font-size: 0.6875rem;
+  }
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+  .axioms-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-box {
+    padding: 32px 18px;
+  }
+  .cta-title {
+    font-size: 1.5rem;
+  }
+  .toast-notification {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: calc(100vw - 32px);
+  }
+}
+
+/* 5. Standard Phones (<= 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero-detected-badge {
+    font-size: 0.6875rem;
+    padding: 4px 10px;
+    text-align: center;
+  }
+  .mobile-helper-card {
+    padding: 12px;
+  }
+  .mobile-helper-title {
+    font-size: 0.8125rem;
+  }
+  .mobile-helper-desc {
+    font-size: 0.75rem;
+  }
+  .mobile-copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .mobile-browse-link {
+    width: 100%;
+    text-align: center;
+  }
+  .speeddial-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .speeddial-card {
+    padding: 8px 6px;
+    font-size: 0.6875rem;
+  }
+  .speeddial-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .checksum-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+  }
+  .cs-hash {
+    width: 100%;
+    word-break: break-all;
+    font-size: 0.625rem;
+    white-space: normal;
+  }
+  .cs-copy-btn {
+    width: 100%;
+    text-align: center;
+    padding: 6px 10px;
+  }
+  .modal-card {
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+    border-radius: 14px;
+  }
+  .modal-body {
+    padding: 14px;
+  }
+  .demo-screen-content {
+    height: 180px;
+    padding: 10px;
+  }
+  .demo-stage-bubble {
+    font-size: 0.6875rem;
+    padding: 6px 8px;
+  }
+  .demo-hud-overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 0.625rem;
+  }
+  .f-watermark-text {
+    font-size: 3.5rem;
+  }
+}
+
+/* 6. Ultra-Compact / Foldable Cover Screens (<= 360px) */
+@media (max-width: 360px) {
+  .section-container,
+  .hero-container {
+    padding: 0 10px;
+  }
+  .hero-title {
+    font-size: 1.55rem;
+  }
+  .section-headline {
+    font-size: 1.35rem;
+  }
+  .brand-name {
+    font-size: 1rem;
+  }
+  .header-download-btn {
+    padding: 5px 9px;
+    font-size: 0.75rem;
+  }
+  .trust-chip {
+    font-size: 0.6875rem;
+    padding: 2px 7px;
   }
 }

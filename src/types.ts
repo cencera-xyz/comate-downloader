@@ -3,6 +3,22 @@
  */
 
 export type OSPlatform = 'linux' | 'windows' | 'macos';
+export type DeviceType = 'windows' | 'linux' | 'macos' | 'android' | 'ios' | 'unknown';
+
+export interface DeviceInfo {
+  os: OSPlatform;
+  deviceType: DeviceType;
+  isMobile: boolean;
+  isTablet: boolean;
+  isDesktop: boolean;
+  detectedName: string;
+  recommendedExt: string;
+  recommendedSize: string;
+  downloadUrl: string;
+  downloadLabel: string;
+  downloadSub: string;
+  detectedNotice: string;
+}
 
 export interface OSConfig {
   detectedOS: OSPlatform;

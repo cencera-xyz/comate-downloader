@@ -1,8 +1,9 @@
 /**
  * Hero Component (Clean Claymorphic Banner, Headline, CTAs)
  */
-import { openModal } from './Modals';
+import { openModal, showToast } from './Modals';
 import type { OSPlatform } from '../types';
+import { BrandIcons, LucideIcons } from './Icons';
 
 export function renderHero(mockupHtml: string): string {
   return `
@@ -31,19 +32,19 @@ export function renderHero(mockupHtml: string): string {
         <div class="primary-cta-dropdown-wrap">
           <a href="#downloads" class="clay-primary-btn" id="hero-download-btn">
             <span class="btn-icon" id="hero-os-icon">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              ${BrandIcons.Windows({ size: 18 })}
             </span>
             <span class="btn-content">
-              <span class="btn-label" id="hero-download-label">Download for Linux</span>
-              <span class="btn-subtext" id="hero-download-sub">v0.0.98 (.deb / AppImage)</span>
+              <span class="btn-label" id="hero-download-label">Download for Windows</span>
+              <span class="btn-subtext" id="hero-download-sub">v0.0.98 Portable (.exe) • 107 MB</span>
             </span>
           </a>
           <button class="cta-dropdown-toggle" id="cta-dropdown-toggle" aria-label="Select OS platform">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            ${LucideIcons.ChevronDown({ size: 14, strokeWidth: 2.2 })}
           </button>
           <!-- Dropdown menu -->
           <div class="cta-dropdown-menu" id="cta-dropdown-menu">
-            <div class="dropdown-header">Platform (v0.0.98 Release)</div>
+            <div class="dropdown-header">Available Packages (v0.0.98)</div>
             <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.0.98/cencera-comate-portable_0.0.98_x64.exe" class="dropdown-item" data-os="windows" target="_blank" rel="noopener noreferrer">
               <span class="dd-title">Windows Portable (.exe) <span class="dd-badge-active">107 MB</span></span>
             </a>
@@ -56,8 +57,38 @@ export function renderHero(mockupHtml: string): string {
             <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.0.98/cencera-comate_0.0.98_x86_64.AppImage" class="dropdown-item" data-os="linux" target="_blank" rel="noopener noreferrer">
               <span class="dd-title">Linux Universal (.AppImage) <span class="dd-badge-active">121 MB</span></span>
             </a>
-            <div class="dropdown-item disabled-os-item" title="macOS / iOS version is not released in v0.0.98">
-              <span class="dd-title">macOS / iOS (.dmg) <span class="dd-tag-soon">Unavailable</span></span>
+            <a href="#downloads" class="dropdown-item" data-os="macos">
+              <span class="dd-title">macOS Universal (.dmg) <span class="dd-tag-soon">Compiling</span></span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#downloads" class="dropdown-item dropdown-footer-item">
+              <span class="dd-title">All Release Packages &amp; Checksums →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Detected Device Micro-Badge -->
+        <div class="hero-detected-badge" id="hero-detected-badge">
+          <span class="det-dot"></span>
+          <span id="hero-detected-text">Auto-detecting platform...</span>
+        </div>
+
+        <!-- Mobile Visitor Helper Card -->
+        <div class="hero-mobile-helper" id="hero-mobile-helper" style="display: none;">
+          <div class="mobile-helper-card">
+            <div class="mobile-helper-content">
+              <span class="mobile-helper-icon">${LucideIcons.Laptop({ size: 16 })}</span>
+              <div class="mobile-helper-text">
+                <span class="mobile-helper-title">Desktop Application</span>
+                <span class="mobile-helper-desc">Comate runs on Windows &amp; Linux PCs. Copy download link to install on your computer:</span>
+              </div>
+            </div>
+            <div class="mobile-helper-actions">
+              <button class="mobile-copy-btn" id="hero-copy-link-btn" type="button" aria-label="Copy download link for PC">
+                <span class="copy-btn-icon" id="copy-btn-icon">${LucideIcons.Copy({ size: 14 })}</span>
+                <span id="copy-btn-text">Copy Link for PC</span>
+              </button>
+              <a href="#downloads" class="mobile-browse-link">View All Desktop Packages ↓</a>
             </div>
           </div>
         </div>
@@ -81,6 +112,7 @@ export function initHero(onSelectPlatform?: (os: OSPlatform) => void): void {
   const badgeTrigger = document.getElementById('hero-badge-trigger');
   const dropdownToggle = document.getElementById('cta-dropdown-toggle');
   const dropdownMenu = document.getElementById('cta-dropdown-menu');
+  const copyBtn = document.getElementById('hero-copy-link-btn');
 
   if (badgeTrigger) {
     badgeTrigger.addEventListener('click', () => {
@@ -107,6 +139,41 @@ export function initHero(onSelectPlatform?: (os: OSPlatform) => void): void {
         }
         dropdownMenu.classList.remove('open');
       });
+    });
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const copyUrl = 'https://comate.cencera.xyz/#downloads';
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(copyUrl);
+        } else {
+          const textArea = document.createElement('textarea');
+          textArea.value = copyUrl;
+          textArea.style.position = 'fixed';
+          textArea.style.left = '-9999px';
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+        }
+
+        const copyIcon = document.getElementById('copy-btn-icon');
+        const copyText = document.getElementById('copy-btn-text');
+        if (copyIcon) copyIcon.innerHTML = LucideIcons.Check({ size: 14, strokeWidth: 2.5 });
+        if (copyText) copyText.textContent = 'Link Copied!';
+
+        showToast('Download link copied! Open on your PC to download Comate.');
+
+        setTimeout(() => {
+          if (copyIcon) copyIcon.innerHTML = LucideIcons.Copy({ size: 14 });
+          if (copyText) copyText.textContent = 'Copy Link for PC';
+        }, 2500);
+      } catch (err) {
+        showToast('Link: comate.cencera.xyz/#downloads');
+      }
     });
   }
 }
