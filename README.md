@@ -4,7 +4,7 @@
 
 **Official Distribution Hub and In-App Update Mirror for Cencera Comate Browser**
 
-[![Version](https://img.shields.io/badge/Release-0.0.99_BASE-00ddff?style=for-the-badge&logo=electron&logoColor=white)](https://github.com/cencera-xyz/comate-downloader/releases)
+[![Version](https://img.shields.io/badge/Release-V0.1.100_BASE-00ddff?style=for-the-badge&logo=electron&logoColor=white)](https://github.com/cencera-xyz/comate-downloader/releases)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-blue?style=for-the-badge)](https://github.com/cencera-xyz/comate-downloader/releases)
 [![Domain](https://img.shields.io/badge/Official%20Site-cencera.xyz-purple?style=for-the-badge)](https://accounts.cencera.xyz)
 
