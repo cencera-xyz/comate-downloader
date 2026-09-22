@@ -383,7 +383,7 @@ body.dark-theme {
   letter-spacing: -0.01em;
 }
 
-.beta-badge {
+.BASE-badge {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 600;

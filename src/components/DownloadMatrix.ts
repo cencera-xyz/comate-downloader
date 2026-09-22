@@ -11,8 +11,8 @@ export function renderDownloadMatrix(): string {
     <div class="section-container">
       <div class="section-header-center">
         <span class="section-eyebrow">Get Started Today</span>
-        <h2 class="section-headline">Download Comate v0.0.99 Beta</h2>
-        <p class="section-subheadline">Experience the autonomous desktop browser on your operating system. Free while in public beta.</p>
+        <h2 class="section-headline">Download Comate V0.1.100 BASE</h2>
+        <p class="section-subheadline">Experience the autonomous desktop browser on your operating system. Free while in public BASE.</p>
       </div>
 
       <!-- OS Selector Tabs -->
@@ -20,13 +20,13 @@ export function renderDownloadMatrix(): string {
         <button class="dl-tab active" data-platform="windows" id="tab-btn-windows">
           <span class="dl-tab-icon">${BrandIcons.Windows({ size: 15 })}</span>
           <span>Windows</span>
-          <span class="badge-tab-active">v0.0.99</span>
+          <span class="badge-tab-active">V0.1.100</span>
         </button>
         <button class="dl-tab" data-platform="linux" id="tab-btn-linux">
           <span class="dl-tab-icon">${BrandIcons.Linux({ size: 15 })}</span>
           <span>Linux</span>
         </button>
-        <button class="dl-tab dl-tab-disabled" data-platform="macos" id="tab-btn-macos" title="macOS / iOS build is not released yet in v0.0.99">
+        <button class="dl-tab dl-tab-disabled" data-platform="macos" id="tab-btn-macos" title="macOS / iOS build is not released yet in V0.1.100">
           <span class="dl-tab-icon">${BrandIcons.Apple({ size: 15 })}</span>
           <span>macOS / iOS</span>
           <span class="badge-tab-disabled">Soon</span>
@@ -46,11 +46,11 @@ export function renderDownloadMatrix(): string {
               </div>
               <p class="dl-pkg-desc">Installs seamlessly via apt or software center. Includes automatic desktop drawer launchers and system sandbox permissions.</p>
               <div class="dl-meta-row">
-                <span>Version: <strong>v0.0.99</strong></span>
+                <span>Version: <strong>V0.1.100</strong></span>
                 <span>Size: <strong>95.7 MB</strong></span>
                 <span>Arch: <strong>amd64</strong></span>
               </div>
-              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_amd64.deb" class="glow-download-button" data-filename="cencera-comate_0.0.99_amd64.deb" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate_0.0.99_amd64.deb" class="glow-download-button" data-filename="cencera-comate_0.0.99_amd64.deb" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>Download .deb (95.7 MB)</span>
               </a>
@@ -68,11 +68,11 @@ export function renderDownloadMatrix(): string {
               </div>
               <p class="dl-pkg-desc">Run directly on Fedora, Arch, Ubuntu, openSUSE, and other distributions with zero system dependencies.</p>
               <div class="dl-meta-row">
-                <span>Version: <strong>v0.0.99</strong></span>
+                <span>Version: <strong>V0.1.100</strong></span>
                 <span>Size: <strong>121 MB</strong></span>
                 <span>Arch: <strong>x86_64</strong></span>
               </div>
-              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_x86_64.AppImage" class="glass-download-button" data-filename="cencera-comate_0.0.99_x86_64.AppImage" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate_0.0.99_x86_64.AppImage" class="glass-download-button" data-filename="cencera-comate_0.0.99_x86_64.AppImage" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>Download .AppImage (121 MB)</span>
               </a>
@@ -96,11 +96,11 @@ export function renderDownloadMatrix(): string {
               </div>
               <p class="dl-pkg-desc">Verified standalone Windows x64 binary. No installation required; run directly on Windows 10/11 with complete local privacy.</p>
               <div class="dl-meta-row">
-                <span>Version: <strong>v0.0.99</strong></span>
+                <span>Version: <strong>V0.1.100</strong></span>
                 <span>Size: <strong>107 MB</strong></span>
                 <span>OS: <strong>Windows 10 / 11 (64-bit)</strong></span>
               </div>
-              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-portable_0.0.99_x64.exe" class="glow-download-button" data-filename="cencera-comate-portable_0.0.99_x64.exe" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate-portable_0.0.99_x64.exe" class="glow-download-button" data-filename="cencera-comate-portable_0.0.99_x64.exe" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>Download .exe Portable (107 MB)</span>
               </a>
@@ -118,11 +118,11 @@ export function renderDownloadMatrix(): string {
               </div>
               <p class="dl-pkg-desc">Standard Windows NSIS setup package with start menu shortcuts, system file associations, and automated desktop integration.</p>
               <div class="dl-meta-row">
-                <span>Version: <strong>v0.0.99</strong></span>
+                <span>Version: <strong>V0.1.100</strong></span>
                 <span>Size: <strong>108 MB</strong></span>
                 <span>OS: <strong>Windows 10 / 11 (64-bit)</strong></span>
               </div>
-              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-setup_0.0.99_x64.exe" class="glass-download-button" data-filename="cencera-comate-setup_0.0.99_x64.exe" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate-setup_0.0.99_x64.exe" class="glass-download-button" data-filename="cencera-comate-setup_0.0.99_x64.exe" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>Download .exe Setup (108 MB)</span>
               </a>
@@ -135,21 +135,21 @@ export function renderDownloadMatrix(): string {
           </div>
         </div>
 
-        <!-- macOS / iOS Downloads (Disabled — Not in v0.0.99 Release) -->
+        <!-- macOS / iOS Downloads (Disabled — Not in V0.1.100 Release) -->
         <div class="platform-dl-panel" id="panel-macos">
           <div class="dl-grid-two">
             <div class="dl-release-card card-disabled">
-              <div class="rec-pill pill-disabled">Unavailable in v0.0.99</div>
+              <div class="rec-pill pill-disabled">Unavailable in V0.1.100</div>
               <div class="dl-card-head">
                 <h3 class="dl-pkg-name">macOS Apple Silicon (.dmg)</h3>
                 <span class="dl-tag tag-disabled">arm64</span>
               </div>
-              <p class="dl-pkg-desc">Apple Silicon (M1/M2/M3/M4) build is currently undergoing compilation and signature verification. Not available in v0.0.99.</p>
+              <p class="dl-pkg-desc">Apple Silicon (M1/M2/M3/M4) build is currently undergoing compilation and signature verification. Not available in V0.1.100.</p>
               <div class="dl-meta-row">
                 <span>Status: <strong>Coming in future release</strong></span>
                 <span>OS: <strong>macOS 12.0+ / iOS</strong></span>
               </div>
-              <button class="glow-download-button btn-disabled" disabled aria-disabled="true" title="macOS / iOS version is not released in v0.0.99">
+              <button class="glow-download-button btn-disabled" disabled aria-disabled="true" title="macOS / iOS version is not released in V0.1.100">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
                 <span>macOS / iOS Version Disabled</span>
               </button>
@@ -159,17 +159,17 @@ export function renderDownloadMatrix(): string {
             </div>
 
             <div class="dl-release-card card-disabled">
-              <div class="rec-pill pill-disabled">Unavailable in v0.0.99</div>
+              <div class="rec-pill pill-disabled">Unavailable in V0.1.100</div>
               <div class="dl-card-head">
                 <h3 class="dl-pkg-name">macOS Intel x64 (.dmg)</h3>
                 <span class="dl-tag tag-disabled">x86_64</span>
               </div>
-              <p class="dl-pkg-desc">Universal x86_64 DMG package for Intel-based Macs. Currently in active development and not available in v0.0.99.</p>
+              <p class="dl-pkg-desc">Universal x86_64 DMG package for Intel-based Macs. Currently in active development and not available in V0.1.100.</p>
               <div class="dl-meta-row">
                 <span>Status: <strong>Coming in future release</strong></span>
                 <span>OS: <strong>macOS 11.0+</strong></span>
               </div>
-              <button class="glass-download-button btn-disabled" disabled aria-disabled="true" title="macOS / iOS version is not released in v0.0.99">
+              <button class="glass-download-button btn-disabled" disabled aria-disabled="true" title="macOS / iOS version is not released in V0.1.100">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
                 <span>macOS / iOS Version Disabled</span>
               </button>

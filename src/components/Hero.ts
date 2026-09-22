@@ -13,7 +13,7 @@ export function renderHero(mockupHtml: string): string {
       <div class="hero-badge-wrap">
         <button class="hero-pill-badge" id="hero-badge-trigger" aria-label="View Release notes">
           <span class="pill-dot"></span>
-          <span class="pill-text">Comate v0.0.99 Beta</span>
+          <span class="pill-text">Comate V0.1.100 BASE</span>
           <span class="pill-arrow">→</span>
         </button>
       </div>
@@ -36,7 +36,7 @@ export function renderHero(mockupHtml: string): string {
             </span>
             <span class="btn-content">
               <span class="btn-label" id="hero-download-label">Download for Windows</span>
-              <span class="btn-subtext" id="hero-download-sub">v0.0.99 Portable (.exe) • 107 MB</span>
+              <span class="btn-subtext" id="hero-download-sub">V0.1.100 Portable (.exe) • 107 MB</span>
             </span>
           </a>
           <button class="cta-dropdown-toggle" id="cta-dropdown-toggle" aria-label="Select OS platform">
@@ -44,17 +44,17 @@ export function renderHero(mockupHtml: string): string {
           </button>
           <!-- Dropdown menu -->
           <div class="cta-dropdown-menu" id="cta-dropdown-menu">
-            <div class="dropdown-header">Available Packages (v0.0.99)</div>
-            <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-portable_0.0.99_x64.exe" class="dropdown-item" data-os="windows" target="_blank" rel="noopener noreferrer">
+            <div class="dropdown-header">Available Packages (V0.1.100)</div>
+            <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate-portable_0.0.99_x64.exe" class="dropdown-item" data-os="windows" target="_blank" rel="noopener noreferrer">
               <span class="dd-title">Windows Portable (.exe) <span class="dd-badge-active">107 MB</span></span>
             </a>
-            <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate-setup_0.0.99_x64.exe" class="dropdown-item" data-os="windows" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate-setup_0.0.99_x64.exe" class="dropdown-item" data-os="windows" target="_blank" rel="noopener noreferrer">
               <span class="dd-title">Windows Setup (.exe) <span class="dd-badge-active">108 MB</span></span>
             </a>
-            <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_amd64.deb" class="dropdown-item" data-os="linux" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate_0.0.99_amd64.deb" class="dropdown-item" data-os="linux" target="_blank" rel="noopener noreferrer">
               <span class="dd-title">Linux Debian / Ubuntu (.deb) <span class="dd-badge-active">95.7 MB</span></span>
             </a>
-            <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/v0.0.99/cencera-comate_0.0.99_x86_64.AppImage" class="dropdown-item" data-os="linux" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate_0.0.99_x86_64.AppImage" class="dropdown-item" data-os="linux" target="_blank" rel="noopener noreferrer">
               <span class="dd-title">Linux Universal (.AppImage) <span class="dd-badge-active">121 MB</span></span>
             </a>
             <a href="#downloads" class="dropdown-item" data-os="macos">

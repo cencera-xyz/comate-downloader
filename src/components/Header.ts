@@ -12,7 +12,7 @@ export function renderHeader(): string {
         </div>
         <div class="brand-text-group">
           <span class="brand-name">Comate</span>
-          <span class="beta-badge">Beta</span>
+          <span class="BASE-badge">BASE</span>
         </div>
       </a>
 

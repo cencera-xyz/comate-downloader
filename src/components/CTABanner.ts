@@ -10,10 +10,10 @@ export function renderCTABanner(): string {
         <div class="banner-content">
           <span class="banner-eyebrow">Ready to upgrade your browsing?</span>
           <h2 class="banner-title">Stop manual tab switching.<br><span class="gradient-headline">Let Comate handle the rest.</span></h2>
-          <p class="banner-desc">Download the public beta today and experience the future of the autonomous desktop web.</p>
+          <p class="banner-desc">Download the public BASE today and experience the future of the autonomous desktop web.</p>
           <div class="banner-btn-row">
             <a href="#downloads" class="clay-primary-btn">
-              <span>Download Comate Free Beta</span>
+              <span>Download Comate Free BASE</span>
               <span class="btn-arrow">→</span>
             </a>
             <a href="#architecture" class="clay-secondary-btn">
