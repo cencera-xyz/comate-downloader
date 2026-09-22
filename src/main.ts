@@ -27,10 +27,14 @@ function detectClientDevice(): DeviceInfo {
   const ua = (nav.userAgent || '').toLowerCase();
   const platform = (nav.userAgentData?.platform || nav.platform || '').toLowerCase();
 
-  const isAndroid = /android/i.test(ua) || /android/i.test(platform);
-  const isIOS = /iphone|ipad|ipod/i.test(ua) || (platform.includes('mac') && (nav.maxTouchPoints || 0) > 1);
+  // Comate / Electron is always a desktop app — never treat it as mobile.
+  const isElectron = /electron/i.test(ua) || typeof (window as any).comateAPI !== 'undefined';
+
+  const isAndroid = !isElectron && (/android/i.test(ua) || /android/i.test(platform));
+  const isIOS = !isElectron && (/iphone|ipad|ipod/i.test(ua) || (platform.includes('mac') && (nav.maxTouchPoints || 0) > 1));
   const isTablet = isIOS && (/ipad/i.test(ua) || (nav.maxTouchPoints || 0) > 1);
-  const isMobile = isAndroid || isIOS || /mobile|tablet|webos|blackberry|iemobile|opera mini/i.test(ua) || (window.innerWidth <= 640 && ('ontouchstart' in window || (nav.maxTouchPoints || 0) > 0));
+  // Guard: never flag Electron/Comate as mobile regardless of window size.
+  const isMobile = !isElectron && (isAndroid || isIOS || /mobile|tablet|webos|blackberry|iemobile|opera mini/i.test(ua) || (window.innerWidth <= 640 && ('ontouchstart' in window || (nav.maxTouchPoints || 0) > 0)));
 
   if (isAndroid) {
     return {
