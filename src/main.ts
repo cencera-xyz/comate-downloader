@@ -244,8 +244,11 @@ function applyDeviceCustomization(deviceOrOS: DeviceInfo | OSPlatform): void {
   if (heroDownloadBtn) {
     heroDownloadBtn.href = device.downloadUrl;
     if (device.downloadUrl.startsWith('http')) {
-      heroDownloadBtn.setAttribute('target', '_blank');
-      heroDownloadBtn.setAttribute('rel', 'noopener noreferrer');
+      // Keep direct installer downloads in the current tab. Some Linux browser
+      // configurations suppress new-tab navigation for download responses,
+      // which makes this CTA look as if it did nothing.
+      heroDownloadBtn.removeAttribute('target');
+      heroDownloadBtn.removeAttribute('rel');
     } else {
       heroDownloadBtn.removeAttribute('target');
       heroDownloadBtn.removeAttribute('rel');
