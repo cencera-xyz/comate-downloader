@@ -50,7 +50,7 @@ export function renderDownloadMatrix(): string {
                 <span>Size: <strong>95.7 MB</strong></span>
                 <span>Arch: <strong>amd64</strong></span>
               </div>
-              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate_0.0.99_amd64.deb" class="glow-download-button" data-filename="cencera-comate_0.0.99_amd64.deb" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate_0.1.100_amd64.deb" class="glow-download-button" data-filename="cencera-comate_0.1.100_amd64.deb" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>Download .deb (95.7 MB)</span>
               </a>
@@ -72,7 +72,7 @@ export function renderDownloadMatrix(): string {
                 <span>Size: <strong>121 MB</strong></span>
                 <span>Arch: <strong>x86_64</strong></span>
               </div>
-              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate_0.0.99_x86_64.AppImage" class="glass-download-button" data-filename="cencera-comate_0.0.99_x86_64.AppImage" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate_0.1.100_x86_64.AppImage" class="glass-download-button" data-filename="cencera-comate_0.1.100_x86_64.AppImage" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>Download .AppImage (121 MB)</span>
               </a>
@@ -100,7 +100,7 @@ export function renderDownloadMatrix(): string {
                 <span>Size: <strong>107 MB</strong></span>
                 <span>OS: <strong>Windows 10 / 11 (64-bit)</strong></span>
               </div>
-              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate-portable_0.0.99_x64.exe" class="glow-download-button" data-filename="cencera-comate-portable_0.0.99_x64.exe" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate-portable_0.1.100_x64.exe" class="glow-download-button" data-filename="cencera-comate-portable_0.1.100_x64.exe" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>Download .exe Portable (107 MB)</span>
               </a>
@@ -122,7 +122,7 @@ export function renderDownloadMatrix(): string {
                 <span>Size: <strong>108 MB</strong></span>
                 <span>OS: <strong>Windows 10 / 11 (64-bit)</strong></span>
               </div>
-              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate-setup_0.0.99_x64.exe" class="glass-download-button" data-filename="cencera-comate-setup_0.0.99_x64.exe" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.100/cencera-comate-setup_0.1.100_x64.exe" class="glass-download-button" data-filename="cencera-comate-setup_0.1.100_x64.exe" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>Download .exe Setup (108 MB)</span>
               </a>
