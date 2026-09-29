@@ -1,6 +1,6 @@
 /**
  * Footer Component — Cencera Studio Design
- * Matches the Cencera layout with giant watermark, services, company, and connect columns.
+ * Matches the Cencera layout with giant watermark, services, company, legal, and connect columns.
  */
 import { openModal } from './Modals';
 
@@ -35,26 +35,36 @@ export function renderFooter(): string {
         <!-- Col 1: Services -->
         <div class="footer-links-col">
           <h4 class="f-heading">SERVICES</h4>
-          <a href="#features" class="f-link">DeFi &amp; dApps</a>
-          <a href="#workflows" class="f-link">Smart Contracts</a>
-          <a href="#features" class="f-link">Token &amp; CEX Listing</a>
-          <a href="#features" class="f-link">AI Applications</a>
-          <a href="#workflows" class="f-link">Web Development</a>
-          <a href="#privacy" class="f-link">Smart Contract Audits</a>
+          <a href="/#features" data-route="/#features" class="f-link">DeFi &amp; dApps</a>
+          <a href="/#workflows" data-route="/#workflows" class="f-link">Smart Contracts</a>
+          <a href="/#features" data-route="/#features" class="f-link">Token &amp; CEX Listing</a>
+          <a href="/#features" data-route="/#features" class="f-link">AI Applications</a>
+          <a href="/#workflows" data-route="/#workflows" class="f-link">Web Development</a>
+          <a href="/#privacy" data-route="/#privacy" class="f-link">Smart Contract Audits</a>
         </div>
 
         <!-- Col 2: Company -->
         <div class="footer-links-col">
           <h4 class="f-heading">COMPANY</h4>
-          <a href="#about" class="f-link">About Us</a>
-          <a href="#features" class="f-link">Services</a>
-          <a href="#workflows" class="f-link">Portfolio</a>
-          <a href="#features" class="f-link">Hackathons</a>
-          <a href="#about" class="f-link">Team</a>
+          <a href="/#features" data-route="/#features" class="f-link">About Us</a>
+          <a href="/#features" data-route="/#features" class="f-link">Services</a>
+          <a href="/#workflows" data-route="/#workflows" class="f-link">Portfolio</a>
+          <a href="/#features" data-route="/#features" class="f-link">Hackathons</a>
+          <a href="https://github.com/cencera" target="_blank" rel="noopener noreferrer" class="f-link">Engineering</a>
           <a href="mailto:contact@cencera.xyz" class="f-link">Contact</a>
         </div>
 
-        <!-- Col 3: Connect -->
+        <!-- Col 3: Legal & Compliance -->
+        <div class="footer-links-col">
+          <h4 class="f-heading">LEGAL &amp; POLICIES</h4>
+          <a href="/terms" data-route="/terms" class="f-link">Terms of Service</a>
+          <a href="/privacy" data-route="/privacy" class="f-link">Privacy Policy</a>
+          <a href="/refund" data-route="/refund" class="f-link">Refund Policy</a>
+          <a href="/anti-piracy" data-route="/anti-piracy" class="f-link">Anti-Piracy Policy</a>
+          <a href="#" id="footer-changelog-trigger" class="f-link">Release Notes</a>
+        </div>
+
+        <!-- Col 4: Connect -->
         <div class="footer-links-col">
           <h4 class="f-heading">CONNECT</h4>
           <a href="https://github.com/cencera" target="_blank" rel="noopener noreferrer" class="f-link f-link-social">
@@ -89,9 +99,18 @@ export function renderFooter(): string {
         <span class="f-watermark-text">CENCERA</span>
       </div>
 
-      <!-- Bottom Row: Copyright & Design Credit -->
+      <!-- Bottom Row: Copyright, Legal Crumb Links & Design Credit -->
       <div class="footer-bottom-row">
-        <p class="f-copy">&copy; 2026 Cencera Developers. All rights reserved.</p>
+        <p class="f-copy">&copy; 2026 Cencera Technologies Inc. All rights reserved.</p>
+        <div class="f-bottom-legal-links">
+          <a href="/terms" data-route="/terms" class="f-legal-crumb">Terms of Service</a>
+          <span class="f-sep">•</span>
+          <a href="/privacy" data-route="/privacy" class="f-legal-crumb">Privacy Policy</a>
+          <span class="f-sep">•</span>
+          <a href="/refund" data-route="/refund" class="f-legal-crumb">Refund Policy</a>
+          <span class="f-sep">•</span>
+          <a href="/anti-piracy" data-route="/anti-piracy" class="f-legal-crumb">Anti-Piracy</a>
+        </div>
         <p class="f-credit">Designed with Soft Light UI</p>
       </div>
     </div>

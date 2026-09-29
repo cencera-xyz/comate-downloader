@@ -1,6 +1,6 @@
 /**
- * Comate Landing Page - Main TypeScript Orchestrator
- * Fully modular component architecture
+ * Comate Landing Page & Legal Hub - Main TypeScript Orchestrator
+ * Fully modular component architecture with client-side SPA routing
  */
 import './style.css';
 import type { OSPlatform, DeviceInfo } from './types';
@@ -18,6 +18,7 @@ import { renderCTABanner } from './components/CTABanner';
 import { renderFooter, initFooter } from './components/Footer';
 import { renderModals, initModals } from './components/Modals';
 import { BrandIcons, LucideIcons } from './components/Icons';
+import { renderLegalPage, initLegalPage, LEGAL_METAS, type LegalDocType } from './components/LegalPages';
 
 const WIN_PORTABLE_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.104/cencera-comate-portable_0.1.104_x64.exe';
 const LINUX_DEB_URL = 'https://github.com/cencera-xyz/comate-downloader/releases/download/V0.1.104/cencera-comate_0.1.104_amd64.deb';
@@ -33,7 +34,6 @@ function detectClientDevice(): DeviceInfo {
   const isAndroid = !isElectron && (/android/i.test(ua) || /android/i.test(platform));
   const isIOS = !isElectron && (/iphone|ipad|ipod/i.test(ua) || (platform.includes('mac') && (nav.maxTouchPoints || 0) > 1));
   const isTablet = isIOS && (/ipad/i.test(ua) || (nav.maxTouchPoints || 0) > 1);
-  // Guard: never flag Electron/Comate as mobile regardless of window size.
   const isMobile = !isElectron && (isAndroid || isIOS || /mobile|tablet|webos|blackberry|iemobile|opera mini/i.test(ua) || (window.innerWidth <= 640 && ('ontouchstart' in window || (nav.maxTouchPoints || 0) > 0)));
 
   if (isAndroid) {
@@ -244,9 +244,6 @@ function applyDeviceCustomization(deviceOrOS: DeviceInfo | OSPlatform): void {
   if (heroDownloadBtn) {
     heroDownloadBtn.href = device.downloadUrl;
     if (device.downloadUrl.startsWith('http')) {
-      // Keep direct installer downloads in the current tab. Some Linux browser
-      // configurations suppress new-tab navigation for download responses,
-      // which makes this CTA look as if it did nothing.
       heroDownloadBtn.removeAttribute('target');
       heroDownloadBtn.removeAttribute('rel');
     } else {
@@ -284,49 +281,203 @@ function applyDeviceCustomization(deviceOrOS: DeviceInfo | OSPlatform): void {
   activatePlatformTab(device.os);
 }
 
-function initApp(): void {
+/* ==========================================================================
+   ROUTING & VIEW DISPATCHER
+   ========================================================================== */
+type RouteInfo = 
+  | { type: 'home'; anchor?: string }
+  | { type: 'legal'; doc: LegalDocType; anchor?: string };
+
+function parseCurrentRoute(): RouteInfo {
+  const pathname = (window.location.pathname || '').toLowerCase().replace(/\/$/, '') || '/';
+  const hash = (window.location.hash || '').toLowerCase();
+
+  // 1. Direct legal pathnames
+  if (pathname === '/terms' || pathname === '/terms-of-service' || pathname === '/tos' || pathname === '/terms-and-conditions') {
+    return { type: 'legal', doc: 'terms', anchor: hash.replace(/^#/, '') };
+  }
+  if (pathname === '/privacy' || pathname === '/privacy-policy') {
+    return { type: 'legal', doc: 'privacy', anchor: hash.replace(/^#/, '') };
+  }
+  if (pathname === '/refund' || pathname === '/refund-policy' || pathname === '/refunds') {
+    return { type: 'legal', doc: 'refund', anchor: hash.replace(/^#/, '') };
+  }
+  if (pathname === '/anti-piracy' || pathname === '/piracy' || pathname === '/piracy-policy' || pathname === '/copyright') {
+    return { type: 'legal', doc: 'anti-piracy', anchor: hash.replace(/^#/, '') };
+  }
+
+  // 2. Hash-based fallback routing (e.g. #/terms or #terms)
+  if (hash.startsWith('#/terms') || hash === '#terms') {
+    return { type: 'legal', doc: 'terms' };
+  }
+  if (hash.startsWith('#/privacy') || hash === '#privacy-policy') {
+    return { type: 'legal', doc: 'privacy' };
+  }
+  if (hash.startsWith('#/refund') || hash === '#refund-policy') {
+    return { type: 'legal', doc: 'refund' };
+  }
+  if (hash.startsWith('#/anti-piracy') || hash.startsWith('#/piracy') || hash === '#piracy') {
+    return { type: 'legal', doc: 'anti-piracy' };
+  }
+
+  // Default to home page
+  return { type: 'home', anchor: hash.replace(/^#/, '') };
+}
+
+function updateMetaTags(title: string, description: string): void {
+  document.title = title;
+  const descEl = document.querySelector('meta[name="description"]');
+  if (descEl) descEl.setAttribute('content', description);
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute('content', title);
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute('content', description);
+}
+
+function bindInternalNavigationLinks(): void {
+  // Capture all data-route or relative legal links
+  const links = document.querySelectorAll<HTMLAnchorElement>('a[data-route], a[href^="/terms"], a[href^="/privacy"], a[href^="/refund"], a[href^="/anti-piracy"], a[href^="/piracy"], a[href="/"]');
+  
+  links.forEach(link => {
+    // Avoid double binding
+    if (link.dataset.navBound === 'true') return;
+    link.dataset.navBound = 'true';
+
+    link.addEventListener('click', (e) => {
+      const targetUrl = link.getAttribute('data-route') || link.getAttribute('href');
+      if (!targetUrl) return;
+
+      // Handle anchor on home page
+      if (targetUrl.startsWith('/#')) {
+        e.preventDefault();
+        const currentRoute = parseCurrentRoute();
+        const anchor = targetUrl.replace('/#', '');
+        if (currentRoute.type === 'home') {
+          const el = document.getElementById(anchor);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, '', `#${anchor}`);
+          }
+        } else {
+          history.pushState(null, '', `/#${anchor}`);
+          renderApp();
+        }
+        return;
+      }
+
+      // Handle full external links or mailto
+      if (targetUrl.startsWith('http') || targetUrl.startsWith('mailto:')) {
+        return;
+      }
+
+      // SPA navigation
+      e.preventDefault();
+      if (window.location.pathname !== targetUrl) {
+        history.pushState(null, '', targetUrl);
+        renderApp();
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+}
+
+function renderApp(): void {
   const appRoot = document.getElementById('app');
   if (!appRoot) return;
 
-  // 1. Compose all modular components
-  appRoot.innerHTML = `
-    ${renderHeader()}
+  const route = parseCurrentRoute();
 
-    <main>
-      ${renderHero(renderBrowserMockup())}
-      ${renderAxioms()}
-      ${renderBentoGrid()}
-      ${renderWorkflows()}
-      ${renderArchitecture()}
-      ${renderPrivacyVault()}
-      ${renderDownloadMatrix()}
-      ${renderFAQ()}
-      ${renderCTABanner()}
-    </main>
+  if (route.type === 'legal') {
+    const meta = LEGAL_METAS[route.doc];
+    updateMetaTags(`${meta.title} — Comate Browser & Cencera`, meta.description);
 
-    ${renderFooter()}
-    ${renderModals()}
-  `;
+    appRoot.innerHTML = `
+      ${renderLegalPage(route.doc)}
+      ${renderFooter()}
+      ${renderModals()}
+    `;
 
-  // 2. Initialize interactive controllers
-  initHeader();
-  initHero((selectedOS) => applyDeviceCustomization(selectedOS));
-  initBrowserMockup();
-  initBentoGrid();
-  initWorkflows();
-  initDownloadMatrix();
-  initFAQ();
-  initFooter();
-  initModals();
+    initLegalPage();
+    initFooter();
+    initModals();
+    bindInternalNavigationLinks();
 
-  // 3. Detect and apply device configuration
-  const detectedDevice = detectClientDevice();
-  applyDeviceCustomization(detectedDevice);
+    // Scroll handling
+    if (route.anchor) {
+      setTimeout(() => {
+        const target = document.getElementById(route.anchor!);
+        if (target) {
+          const headerOffset = 130;
+          const pos = target.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: pos - headerOffset, behavior: 'smooth' });
+        }
+      }, 50);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  } else {
+    // Home Landing Page
+    updateMetaTags(
+      'Comate — The Autonomous Web Browser',
+      'Comate is an autonomous desktop web browser. Automate complex multi-step web tasks, deep research, and structured data extraction with an embedded local agent directly on the live DOM.'
+    );
+
+    appRoot.innerHTML = `
+      ${renderHeader()}
+
+      <main>
+        ${renderHero(renderBrowserMockup())}
+        ${renderAxioms()}
+        ${renderBentoGrid()}
+        ${renderWorkflows()}
+        ${renderArchitecture()}
+        ${renderPrivacyVault()}
+        ${renderDownloadMatrix()}
+        ${renderFAQ()}
+        ${renderCTABanner()}
+      </main>
+
+      ${renderFooter()}
+      ${renderModals()}
+    `;
+
+    initHeader();
+    initHero((selectedOS) => applyDeviceCustomization(selectedOS));
+    initBrowserMockup();
+    initBentoGrid();
+    initWorkflows();
+    initDownloadMatrix();
+    initFAQ();
+    initFooter();
+    initModals();
+    bindInternalNavigationLinks();
+
+    const detectedDevice = detectClientDevice();
+    applyDeviceCustomization(detectedDevice);
+
+    // Scroll handling for home anchors
+    if (route.anchor) {
+      setTimeout(() => {
+        const target = document.getElementById(route.anchor!);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
 }
 
-// Bootstrap once DOM is ready
+// History back/forward navigation
+window.addEventListener('popstate', () => {
+  renderApp();
+});
+
+// Bootstrap on DOM ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initApp);
+  document.addEventListener('DOMContentLoaded', renderApp);
 } else {
-  initApp();
+  renderApp();
 }
